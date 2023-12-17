@@ -27,6 +27,18 @@ class ResultViewController: UIViewController {
             backgroundImageView.image=UIImage(named:"bgRed")
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.characterImageView.center = self.view.center
+        UIView.animate(withDuration: 1.0, delay: 0, options: [.curveEaseIn, .autoreverse, .repeat],animations: {
+            self.characterImageView.center.y += 10.0
+        }) { _ in
+            self.characterImageView.center.y -= 10.0
+            
+            
+        }
+    }
+    
+    
     @IBAction func back(){
             self.dismiss(animated:true, completion:nil)
         }
